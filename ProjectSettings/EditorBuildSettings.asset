@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/UnityARKitPlugin/Examples/UnityARKitScene/UnityARKitScene.unity
     guid: c159f2591a9b5c843b0a0442451f78f8
   - enabled: 0
@@ -26,3 +26,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/UnityARKitPlugin/Examples/FocusSquare/FocusSquareScene.unity
     guid: 3c9ef824a7b95400bade362484e9b6af
+  - enabled: 0
+    path: Assets/_Scenes/AudioScene 1.unity
+    guid: 5fb14d81390ca45398a459405d50f9c0
+  - enabled: 1
+    path: Assets/_Scenes/BubbleRecorder.unity
+    guid: 681ae0f6f38d1452ab737eb7498ba79e

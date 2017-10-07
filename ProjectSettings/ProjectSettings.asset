@@ -11,7 +11,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Unity Technologies
-  productName: Unity ARKit Plugin
+  productName: arwithaudio
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -68,9 +68,9 @@ PlayerSettings:
   defaultIsNativeResolution: 1
   runInBackground: 1
   captureSingleScreen: 0
-  muteOtherAudioSources: 0
-  Prepare IOS For Recording: 0
-  Force IOS Speakers When Recording: 0
+  muteOtherAudioSources: 1
+  Prepare IOS For Recording: 1
+  Force IOS Speakers When Recording: 1
   submitAnalytics: 1
   usePlayerLog: 1
   bakeCollisionMeshes: 0
@@ -144,7 +144,7 @@ PlayerSettings:
     Android: com.Company.ProductName
     Standalone: unity.Unity Technologies.Native Rendering Plugin Example
     Tizen: com.Company.ProductName
-    iOS: com.unity.arkitscene
+    iOS: com.speechbubbles.yep
     tvOS: com.Company.ProductName
   buildNumber:
     iOS: 0
@@ -344,7 +344,7 @@ PlayerSettings:
   enableCrashReportAPI: 0
   cameraUsageDescription: AR BABY
   locationUsageDescription: 
-  microphoneUsageDescription: 
+  microphoneUsageDescription: AUDIO BABY
   switchNetLibKey: 
   switchSocketMemoryPoolSize: 6144
   switchSocketAllocatorPoolSize: 128
