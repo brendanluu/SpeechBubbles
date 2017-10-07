@@ -30,10 +30,14 @@ public class BubbleSpawner : MonoBehaviour
 	{
 		// Y'all we're currently spawning a bubble
 		if (currentBubble) {
-            Vector3 spawnPosition = GetCameraPosition() + (Camera.main.transform.forward * 0.2f);
+            Vector3 spawnPosition = GetCameraPosition() + (Camera.main.transform.forward * 2f);
             currentBubble.transform.position = spawnPosition;
-            float scale = (Mathf.Log(Time.time - timeStart) + 2)/12;
-            currentBubble.transform.localScale = new Vector3(scale, scale, scale);
+            float scale = (Time.time - timeStart) / 15 ;// (Mathf.Log(Time.time - timeStart) + 2)/12;
+            if (scale > 0) {
+                currentBubble.transform.localScale = new Vector3(scale, scale, scale);
+            } else {
+                currentBubble.transform.localScale = new Vector3(0, 0, 0);
+            }
 		}
         // else nothing
 	}
@@ -47,7 +51,7 @@ public class BubbleSpawner : MonoBehaviour
 
     public void StartSpawn() {
         // Updates bubbles position to .2f units in front of the camera
-        Vector3 spawnPosition = GetCameraPosition() + (Camera.main.transform.forward * 0.2f);
+        Vector3 spawnPosition = GetCameraPosition() + (Camera.main.transform.forward * 2f);
         currentBubble = Instantiate(bubblePrefab, spawnPosition, transform.rotation) as GameObject;
         MicrophoneInput.StartRecord(currentBubble.GetComponent<AudioSource>());
         timeStart = Time.time;

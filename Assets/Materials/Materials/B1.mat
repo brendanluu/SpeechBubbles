@@ -81,10 +81,10 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Transparency: 0.1
+    - _Transparency: 0.2
     - _UVSec: 0
     - _ZWrite: 0
     - _snow_slider: 6.36
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 0.078}
+    - _Color: {r: 0.15862082, g: 0, b: 1, a: 0.078}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
