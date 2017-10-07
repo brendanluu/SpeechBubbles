@@ -4,35 +4,17 @@ using UnityEngine.UI;
 
 public class MicrophoneInput : MonoBehaviour
 {
-	public Button record, play;
-	private AudioSource audio;
-
-	void Start ()
+	public static void StartRecord (AudioSource audio)
 	{
-		audio = GetComponent<AudioSource> ();
-		//record.onClick.AddListener (Record);
-	}
-
-	public void StartRecord ()
-	{
-		print ("recording....");
+        Debug.Log("Recording audio");
 		audio.clip = Microphone.Start ("Built-in Microphone", true, 60, 44100);
 	}
 
-	public void StopRecord ()
+	public static void StopRecord ()
 	{
-
+        Debug.Log("Stopping audio");
 		if (Microphone.IsRecording (null)) {
-			print ("Recording Stopped!");
-			Microphone.End (null);
+            Microphone.End (null);
 		}
-
 	}
-
-	public void Play ()
-	{
-		print ("playing...");
-		audio.Play ();
-	}
-
 }
