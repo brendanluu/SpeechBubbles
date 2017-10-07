@@ -6,43 +6,30 @@ using UnityEngine.XR.iOS;
 
 public class BubbleSpawner : MonoBehaviour
 {
+    public float scaleSpeed;
 	public GameObject bubblePrefab;
     private GameObject currentBubble;
     private UnityARCamera arCamera;
     private float timeStart;
-
-	void OnEnable ()
-	{
-		UnityARSessionNativeInterface.ARFrameUpdatedEvent += ARFrameUpdated;
-	}
-
-	void OnDestroy ()
-	{
-		UnityARSessionNativeInterface.ARFrameUpdatedEvent -= ARFrameUpdated;
-	}
 
     private void Start() {
         // Starts not creating a bubble
         currentBubble = null;
     }
 
-    private void ARFrameUpdated (UnityARCamera arCamera)
-	{
-		// Y'all we're currently spawning a bubble
-		if (currentBubble) {
-            Vector3 spawnPosition = GetCameraPosition() + (Camera.main.transform.forward * 2f);
-            currentBubble.transform.position = spawnPosition;
-            float scale = (Time.time - timeStart) / 15f; // (Mathf.Log(Time.time - timeStart) + 2)/12;
-            if (scale > 0) {
-                currentBubble.transform.localScale = new Vector3(scale, scale, scale);
-            } else {
-                currentBubble.transform.localScale = new Vector3(0, 0, 0);
-            }
-		}
-        // else nothing
-	}
 
-	private Vector3 GetCameraPosition ()
+    private void Update() {
+        // Y'all we're currently spawning a bubble
+        if (currentBubble) {
+            float scale = (Time.time - timeStart) / 60f;
+            Vector3 spawnPosition = GetCameraPosition() + (Camera.main.transform.forward * .5f);
+            currentBubble.transform.position = spawnPosition;
+            currentBubble.transform.localScale += (new Vector3(scaleSpeed, scaleSpeed, scaleSpeed) * Time.deltaTime);
+        }
+        // else nothing
+    }
+
+    private Vector3 GetCameraPosition ()
 	{
 		Matrix4x4 matrix = new Matrix4x4 ();
 		matrix.SetColumn (3, arCamera.worldTransform.column3);
@@ -53,6 +40,7 @@ public class BubbleSpawner : MonoBehaviour
         // Updates bubbles position to .2f units in front of the camera
         Vector3 spawnPosition = GetCameraPosition() + (Camera.main.transform.forward * 2f);
         currentBubble = Instantiate(bubblePrefab, spawnPosition, transform.rotation) as GameObject;
+        currentBubble.transform.localScale = new Vector3(0, 0, 0);
         MicrophoneInput.StartRecord(currentBubble.GetComponent<AudioSource>());
         timeStart = Time.time;
     }

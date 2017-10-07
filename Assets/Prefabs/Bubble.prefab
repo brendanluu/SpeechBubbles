@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23800101544741154}
   - component: {fileID: 95406015869041508}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Bubble Wave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,7 +107,7 @@ Transform:
   m_GameObject: {fileID: 1410382169810582}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.91, y: 0, z: 1.92}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.589706, y: 0.589706, z: 0.589706}
   m_Children:
   - {fileID: 224277396345968500}
   - {fileID: 4466192188660034}
@@ -127,7 +127,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 294f251f0d7ef07499a0675e9a1efe58, type: 2}
+  - {fileID: 2100000, guid: 09b16544ac08253468075c3f6109f07e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -281,7 +281,7 @@ Animator:
   m_GameObject: {fileID: 1293719564875676}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 029b1a570f95ac24f96d5caafa8dd2bb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

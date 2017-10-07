@@ -39,4 +39,12 @@ public class Bubble : MonoBehaviour {
     public void releaseBubble() {
         anim.SetTrigger("release");
     }
+
+    public void SetScale(float scale) {
+        if (scale > 0) {
+            gameObject.transform.localScale = new Vector3(scale, scale, scale);
+        } else {
+            gameObject.transform.localScale = new Vector3(0, 0, 0);
+        }
+    }
 }
