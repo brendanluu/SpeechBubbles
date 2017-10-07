@@ -22,7 +22,7 @@ public class Bubble : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
 		Debug.Log("collided");
-        if (other.GetComponent<UnityARVideo>()) {
+        if (other.gameObject.name == "CameraCollider") {
             audio.Play();
             wave.playSound();
         }
@@ -30,7 +30,7 @@ public class Bubble : MonoBehaviour {
 
     private void OnTriggerExit(Collider other) {
 		Debug.Log("out");
-        if (other.GetComponent<UnityARVideo>()) {
+        if (other.gameObject.name == "CameraCollider") {
             audio.Stop();
             wave.stopSound();
         }

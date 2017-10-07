@@ -32,7 +32,7 @@ public class BubbleSpawner : MonoBehaviour
 		if (currentBubble) {
             Vector3 spawnPosition = GetCameraPosition() + (Camera.main.transform.forward * 2f);
             currentBubble.transform.position = spawnPosition;
-            float scale = (Time.time - timeStart) / 15 ;// (Mathf.Log(Time.time - timeStart) + 2)/12;
+            float scale = (Time.time - timeStart) / 15f; // (Mathf.Log(Time.time - timeStart) + 2)/12;
             if (scale > 0) {
                 currentBubble.transform.localScale = new Vector3(scale, scale, scale);
             } else {

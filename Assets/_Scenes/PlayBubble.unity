@@ -323,12 +323,32 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.1682883
       objectReference: {fileID: 0}
+    - target: {fileID: 82174051988159222, guid: 6aa0b85bd372a4d4c98fcebf6a26b9a3,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e8af73f06117942749dc9c4f3f615e01, type: 3}
+    - target: {fileID: 135138442361822050, guid: 6aa0b85bd372a4d4c98fcebf6a26b9a3,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114697532239499770, guid: 6aa0b85bd372a4d4c98fcebf6a26b9a3,
+        type: 2}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 1368294399}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6aa0b85bd372a4d4c98fcebf6a26b9a3, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1368294396 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1410382169810582, guid: 6aa0b85bd372a4d4c98fcebf6a26b9a3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154275461}
+--- !u!82 &1368294399 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82174051988159222, guid: 6aa0b85bd372a4d4c98fcebf6a26b9a3,
     type: 2}
   m_PrefabInternal: {fileID: 1154275461}
 --- !u!54 &1368294404
