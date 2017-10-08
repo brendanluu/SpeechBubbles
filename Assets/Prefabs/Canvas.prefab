@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 223096948944056316}
   - component: {fileID: 114898211329055426}
   - component: {fileID: 114508102951916518}
+  - component: {fileID: 114399704081031994}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -75,6 +76,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114399704081031994
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1081669718355954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 121f7b5a35b1cdf4db644f391da44246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114508102951916518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -102,6 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c016aeb8e72c41cf93d4cb08efdba57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleSpeed: 0
   bubblePrefab: {fileID: 1410382169810582, guid: 6aa0b85bd372a4d4c98fcebf6a26b9a3,
     type: 2}
 --- !u!114 &114871762398478292
@@ -121,7 +134,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 114694275239155474}
-          m_MethodName: StartSpawn
+          m_MethodName: GrowBubble
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -139,6 +152,23 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 114694275239155474}
           m_MethodName: EndSpawn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114694275239155474}
+          m_MethodName: StartSpawn
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -211,10 +241,10 @@ RectTransform:
   m_Father: {fileID: 224779574560222700}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.00000089407, y: 13.7}
-  m_SizeDelta: {x: 62.11, y: 34.9}
+  m_AnchorMin: {x: 0.21173888, y: 0}
+  m_AnchorMax: {x: 0.79229563, y: 0.21388887}
+  m_AnchoredPosition: {x: -0.5, y: 19.5}
+  m_SizeDelta: {x: 0.8899994, y: -19.779999}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!224 &224779574560222700
 RectTransform:

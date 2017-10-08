@@ -5,13 +5,13 @@ using UnityEngine.XR.iOS;
 
 public class Bubble : MonoBehaviour {
 
-    private AudioSource audio;
+    private AudioSource audioSource;
     private Animator anim;
     private BubbleWave wave;
 
 	// Use this for initialization
 	void Start () {
-        audio = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
 	}
 	
@@ -23,16 +23,16 @@ public class Bubble : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
 		Debug.Log("collided");
         if (other.gameObject.name == "CameraCollider") {
-            audio.Play();
-            wave.playSound();
+            audioSource.Play();
+            //wave.playSound();
         }
     }
 
     private void OnTriggerExit(Collider other) {
 		Debug.Log("out");
         if (other.gameObject.name == "CameraCollider") {
-            audio.Stop();
-            wave.stopSound();
+            audioSource.Stop();
+            //wave.stopSound();
         }
     }
 

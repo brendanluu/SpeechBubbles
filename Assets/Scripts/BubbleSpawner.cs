@@ -8,25 +8,21 @@ public class BubbleSpawner : MonoBehaviour
 {
     public float scaleSpeed;
 	public GameObject bubblePrefab;
-    private GameObject currentBubble;
+    private static GameObject currentBubble;
     private UnityARCamera arCamera;
     private float timeStart;
+
+	void OnEnable() {
+		UnityARSessionNativeInterface.ARFrameUpdatedEvent += ARFrameUpdated;
+	}
+
+	void OnDestroy() {
+		UnityARSessionNativeInterface.ARFrameUpdatedEvent -= ARFrameUpdated;
+	}
 
     private void Start() {
         // Starts not creating a bubble
         currentBubble = null;
-    }
-
-
-    private void Update() {
-        // Y'all we're currently spawning a bubble
-        if (currentBubble) {
-            float scale = (Time.time - timeStart) / 60f;
-            Vector3 spawnPosition = GetCameraPosition() + (Camera.main.transform.forward * .5f);
-            currentBubble.transform.position = spawnPosition;
-            currentBubble.transform.localScale += (new Vector3(scaleSpeed, scaleSpeed, scaleSpeed) * Time.deltaTime);
-        }
-        // else nothing
     }
 
     private Vector3 GetCameraPosition ()
@@ -47,8 +43,17 @@ public class BubbleSpawner : MonoBehaviour
 
     public void EndSpawn() {
         // Triggers bubble release animation, stops updating bubble location
-        currentBubble.GetComponent<Bubble>().releaseBubble();
+        //currentBubble.GetComponent<Bubble>().releaseBubble();
         MicrophoneInput.StopRecord();
         currentBubble = null;
     }
+
+	private void ARFrameUpdated(UnityARCamera arCamera) {
+        if (currentBubble) {
+            Vector3 spawnPosition = GetCameraPosition() + (Camera.main.transform.forward * 2f);
+            currentBubble.transform.position = spawnPosition;
+            currentBubble.transform.localScale += (new Vector3(scaleSpeed, scaleSpeed, scaleSpeed) * Time.deltaTime);
+        }
+    }
 }
+
